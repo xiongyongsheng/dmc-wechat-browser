@@ -1,0 +1,32 @@
+{
+  "name": "dmc-wechat-wrappers-h5",
+  "version": "0.0.1",
+  "description": "wechat browser wrappers",
+  "main": "./lib/index.js",
+  "config": {
+    "sign-git-tag": true,
+    "git-tag-version": true
+  },
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "dev": "node ./esbuild.config.js --dev",
+    "build": "node ./esbuild.config.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "wechat",
+    "browser",
+    "wrappers"
+  ],
+  "author": "xiongyongsheng",
+  "license": "ISC",
+  "dependencies": {
+    "dmc-utils": "^0.1.13",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.5"
+  }
+}
