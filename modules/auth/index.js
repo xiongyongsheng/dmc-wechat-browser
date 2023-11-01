@@ -1,19 +1,19 @@
 function toAuth() {
   let state = this.options.state;
-  if (!String(state)) {
+  if (!state) {
     state = this.urlSearchParams.get("state") || "STATE";
   }
-  location.replace(
-    `${this.options.oauth2}?appid=${
-      this.isQYWechat ? this.options.corpId : this.options.appId
-    }&redirect_uri=${encodeURIComponent(
-      this.options.redirectUri
-    )}&response_type=${this.options.responseType}&scope=${
-      this.options.scope
-    }&agentid=${this.options.agentId}&state=${state}&forcePopup=${
-      this.options.forcePopup
-    }#wechat_redirect`
-  );
+
+  const url = `${this.options.oauth2}?appid=${
+    this.isQYWechat ? this.options.corpId : this.options.appId
+  }&redirect_uri=${encodeURIComponent(
+    this.options.redirectUri
+  )}&response_type=${this.options.responseType}&scope=${
+    this.options.scope
+  }&agentid=${this.options.agentId}&state=${state}&forcePopup=${
+    this.options.forcePopup
+  }#wechat_redirect`;
+  location.replace(url);
 }
 export function auth(type) {
   if (this.isQYWechat || type === "qyWechat") {

@@ -15,9 +15,10 @@ class DMCWechatWrappers {
     oauth2: "https://open.weixin.qq.com/connect/oauth2/authorize",
     responseType: "code",
     urlSearch: location.search,
+    urlHash: location.hash,
     forcePopup: false,
     // JS-SDK
-    JS_SDK_URL: "http://res.wx.qq.com/open/js/jweixin-1.6.0.js",
+    JS_SDK_URL: "https://res.wx.qq.com/open/js/jweixin-1.6.0.js",
     // storage key
     storageKey: "dmc-wechat-wrappers",
     storageType: "sessionStorage",
@@ -54,6 +55,7 @@ class DMCWechatWrappers {
   constructor(options, modules) {
     this.options = merge(this.#options, options);
     this.urlSearchParams = new URLSearchParams(this.options.urlSearch);
+    this.urlHashParams = new URLSearchParams(this.options.urlHash);
     this.checkENV();
     this.installModules(modules);
   }
