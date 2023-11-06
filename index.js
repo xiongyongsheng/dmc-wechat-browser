@@ -4,6 +4,7 @@ import { isArray, isFunction, merge } from "lodash";
 // export modules
 export * as auth from "./modules/auth";
 export * as JS_SDK from "./modules/jssdk";
+export * as openTag from "./modules/jssdk/openTag";
 class DMCWechatWrappers {
   #options = {
     appId: null,
