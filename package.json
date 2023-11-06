@@ -1,6 +1,6 @@
 {
   "name": "dmc-wechat-wrappers-h5",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "wechat browser wrappers",
   "main": "./lib/index.js",
   "config": {
