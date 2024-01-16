@@ -1,5 +1,5 @@
 import { isWeiXin, isQYWeiXin } from "dmc-utils/lib/modules/browser/wx";
-import storageAvailable from "dmc-utils/lib/modules/common/storageAvailable";
+import { storageAvailable } from "dmc-utils";
 import { isArray, isFunction, merge } from "lodash";
 // export modules
 export * as auth from "./modules/auth";
