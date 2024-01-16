@@ -1,5 +1,5 @@
-function toAuth() {
-  let state = this.options.state;
+function toAuth(STATE) {
+  let state = STATE || this.options.state;
   if (!state) {
     state = this.urlSearchParams.get("state") || "STATE";
   }
@@ -15,14 +15,14 @@ function toAuth() {
   }#wechat_redirect`;
   location.replace(url);
 }
-export function auth(type) {
-  if (this.isQYWechat || type === "qyWechat") {
+export function auth(STATE) {
+  if (this.isQYWechat) {
     if (this.checkRequiredParameter("isQYWechat")) {
-      toAuth.call(this);
+      toAuth.call(this, STATE);
     }
-  } else if (this.isWechat || type === "wechat") {
+  } else if (this.isWechat) {
     if (this.checkRequiredParameter("isWechat")) {
-      toAuth.call(this);
+      toAuth.call(this, STATE);
     }
   } else {
     console.error("The current non-WeChat environment cannot be authorized.");
